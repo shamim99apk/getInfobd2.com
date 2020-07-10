@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800&display=swap");
+
+.hero-wrapper9 {
+  background: url("https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+  background-size: cover;
+}
+
+.wrapper9 {
+  padding: 1.5em;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 600px;
+}
+.hero-content9 {
+  margin: 4em 0 2em;
+
+  .subtitle9 {
+    margin-bottom: 0;
+  }
+}
+.button9 {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #ffffff;
+  margin: 3.5em 0.3em 2.3em 7.5em;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  text-align: center;
+  transition: all 0.2s;
+  font-size: 3.5em;
+}
+.button9:hover {
+  color: #000000;
+  background-color: #bf37e9;
+}
