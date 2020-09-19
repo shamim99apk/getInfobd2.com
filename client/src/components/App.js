@@ -2,28 +2,30 @@ import React, { Suspense } from "react";
 import { Route, Switch } from "react-router-dom";
 import Auth from "../hoc/auth";
 // pages for this product
-import GroceryLandingPage from "./views/LandingPage/GroceryLandingPage.js";
+
+import BloodLandingPage from "./views/LandingPage/LandingPage.blood";
+import GroceryLandingPage from "./views/LandingPage/LandingPage.grocery";
+import VolunteerLandingPage from "./views/LandingPage/LandingPage.volunteer";
+import PoliceLandingPage from "./views/LandingPage/LandingPage.police";
+import HotelLandingPage from "./views/LandingPage/LandingPage.hotel";
+import HomeLandingPage from "./views/LandingPage/LandingPage.home";
+
 import LoginPage from "./views/LoginPage/LoginPage.js";
 import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer";
-import GroceryUploadProductPage from "./views/UploadProductPage/GroceryUploadProductPage";
-import BloodUploadProductPage from "./views/UploadProductPage/BloodUploadProductPage";
 
-import HomeLandingPage from "./views/LandingPage/HomeLandingPage";
-import GroceryDetailProductPage from "./views/DetailProductPage/GroceryDetailProductPage";
-import BloodLandingPage from "./views/LandingPage/BloodLandingPage";
-import BloodDetailPage from "./views/DetailProductPage/BloodDetailPage";
-//////
+import BloodUpload from "./views/UploadProductPage/UploadBlood";
+import GroceryUpload from "./views/UploadProductPage/UploadGrocery";
+import VolunteerUpload from "./views/UploadProductPage/UploadVolunteer";
+import PoliceUpload from "./views/UploadProductPage/UploadPolice";
+import HotelUpload from "./views/UploadProductPage/UploadHotel";
 
-import VolunteerLandingPage from "./views/LandingPage/VolunteerLandingPage";
-import PoliceLandingPage from "./views/LandingPage/PoliceLandingPage";
-//upload
-import VolunteerUploadProductPage from "./views/UploadProductPage/VolunteerUploadProductPage";
-import PoliceUploadProductPage from "./views/UploadProductPage/PoliceUploadProductPage";
-//detail
-import PoliceDetailPage from "./views/DetailProductPage/PoliceDetailProductPage";
-import VolunteerDetailPage from "./views/DetailProductPage/VolunteerDetailPage";
+import BloodDetailsPage from "./views/DetailProductPage/DetailsPage.blood";
+import GroceryDetailsPage from "./views/DetailProductPage/DetailsPage.grocery";
+import VolunteerDetailsPage from "./views/DetailProductPage/DetailsPage.volunteer";
+import PoliceDetailsPage from "./views/DetailProductPage/DetailsPage.police";
+import HotelDetailsPage from "./views/DetailProductPage/DetailsPage.hotel";
 
 function App() {
   return (
@@ -31,16 +33,16 @@ function App() {
       <NavBar />
       <div style={{ paddingTop: "75px", minHeight: "calc(100vh - 80px)" }}>
         <Switch>
-          <Route exact path='/' component={Auth(HomeLandingPage, false)} />
-          <Route exact path='/login' component={Auth(LoginPage, false)} />
-          <Route exact path='/register' component={Auth(RegisterPage, false)} />
+          {/* LANDING_PAGE */}
+
+          <Route exact path='/blood' component={Auth(BloodLandingPage, null)} />
+          <Route exact path='/' component={Auth(HomeLandingPage, null)} />
 
           <Route
             exact
             path='/grocery'
             component={Auth(GroceryLandingPage, null)}
           />
-          <Route exact path='/blood' component={Auth(BloodLandingPage, null)} />
           <Route
             exact
             path='/volunteer'
@@ -51,47 +53,67 @@ function App() {
             path='/police'
             component={Auth(PoliceLandingPage, null)}
           />
+          <Route exact path='/hotel' component={Auth(HotelLandingPage, null)} />
+
+          {/* /////LOGIN_REGISTRATION////// */}
+          <Route exact path='/login' component={Auth(LoginPage, false)} />
+          <Route exact path='/register' component={Auth(RegisterPage, false)} />
+
+          {/* ///////UPLOAD_PAGE/////// */}
 
           <Route
             exact
-            path='/groceryRoute/:groceryId'
-            component={Auth(GroceryDetailProductPage, null)}
+            path='/blood/upload'
+            component={Auth(BloodUpload, true)}
           />
           <Route
             exact
-            path='/bloodRoute/:bloodId'
-            component={Auth(BloodDetailPage, null)}
+            path='/grocery/upload'
+            component={Auth(GroceryUpload, true)}
           />
           <Route
             exact
-            path='/volunteerRoute/:volunteerId'
-            component={Auth(VolunteerDetailPage, null)}
+            path='/volunteer/upload'
+            component={Auth(VolunteerUpload, true)}
           />
           <Route
             exact
-            path='/policeRoute/:policeId'
-            component={Auth(PoliceDetailPage, null)}
+            path='/police/upload'
+            component={Auth(PoliceUpload, true)}
+          />
+          <Route
+            exact
+            path='/hotel/upload'
+            component={Auth(HotelUpload, true)}
+          />
+
+          {/* //////// DETAILS_PAGE////// */}
+
+          <Route
+            exact
+            path='/blood/:bloodId'
+            component={Auth(BloodDetailsPage, null)}
+          />
+          <Route
+            exact
+            path='/grocery/:groceryId'
+            component={Auth(GroceryDetailsPage, null)}
+          />
+          <Route
+            exact
+            path='/volunteer/:volunteerId'
+            component={Auth(VolunteerDetailsPage, null)}
           />
 
           <Route
             exact
-            path='/blood/bloodUpload'
-            component={Auth(BloodUploadProductPage, true)}
+            path='/police/:policeId'
+            component={Auth(PoliceDetailsPage, null)}
           />
           <Route
             exact
-            path='/grocery/groceryUpload'
-            component={Auth(GroceryUploadProductPage, true)}
-          />
-          <Route
-            exact
-            path='/volunteer/volunteerUpload'
-            component={Auth(VolunteerUploadProductPage, true)}
-          />
-          <Route
-            exact
-            path='/police/policeUpload'
-            component={Auth(PoliceUploadProductPage, true)}
+            path='/hotel/:hotelId'
+            component={Auth(HotelDetailsPage, null)}
           />
         </Switch>
       </div>
