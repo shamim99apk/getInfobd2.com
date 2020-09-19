@@ -28,7 +28,7 @@ function GroceryInfo(props) {
         </Descriptions.Item>
 
         <Descriptions.Item label='Phone number'>
-          {Grocery.phoneNumber}
+          {`0${Grocery.phoneNumber}`}
         </Descriptions.Item>
       </Descriptions>
 
