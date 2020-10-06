@@ -26,7 +26,7 @@ function NavBar() {
         fontStyle: "blue",
       }}>
       <div className='menu__logo'>
-        <a href='/'>GET INFO</a>
+        <a href='/'>ONLINEAREA</a>
       </div>
       <div className='menu__container'>
         <div className='menu_left'>

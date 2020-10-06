@@ -4,6 +4,8 @@ import { Col, Card, Row } from "antd";
 import ImageSlider from "../../utils/ImageSlider";
 // import CheckBox from "./Sections/CheckBox";
 import "./LandingPage.volunteer.scss";
+import "./LandingPage.volunteertwo.scss";
+
 import Icon from "@ant-design/icons";
 // import { continents } from "./Sections/Datas.blood";
 import SearchFeature from "./Sections/SearchFeature";
@@ -133,7 +135,7 @@ function VolunteerLandingPage() {
 
   return (
     <div>
-      <div className='hero-wrapper3'>
+      <div className='hero-wrapper15'>
         <div className='wrapper3'>
           <div className='hero-content3'>
             <div>

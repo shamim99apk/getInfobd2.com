@@ -3,8 +3,8 @@ import Axios from "axios";
 import { Col, Card, Row } from "antd";
 import ImageSlider from "../../utils/ImageSlider";
 // import CheckBox from "./Sections/CheckBox";
-import "./LandingPage.grocery.scss";
-import "./LandingPage.grocerytwo.scss";
+import "./LandingPage.police.scss";
+import "./LandingPage.emergency.scss";
 
 import Icon from "@ant-design/icons";
 // import { continents } from "./Sections/Datas.blood";
@@ -12,8 +12,8 @@ import SearchFeature from "./Sections/SearchFeature";
 
 const { Meta } = Card;
 
-function GroceryLandingPage() {
-  const [Groceries, setGroceries] = useState([]);
+function EmergencyLandingPage() {
+  const [Emergencies, setEmergencies] = useState([]);
   const [Skip, setSkip] = useState(0);
 
   const [Limit, setLimit] = useState(8);
@@ -30,21 +30,21 @@ function GroceryLandingPage() {
       limit: Limit,
     };
 
-    getGroceries(variables);
+    getEmergencies(variables);
   }, []);
 
-  const getGroceries = (variables) => {
-    Axios.post("/api/grocery/groceryGetProducts", variables).then(
+  const getEmergencies = (variables) => {
+    Axios.post("/api/emergency/emergencyGetProducts", variables).then(
       (response) => {
         if (response.data.success) {
           if (variables.loadMore) {
-            setGroceries([...Groceries, ...response.data.groceries]);
+            setEmergencies([...Emergencies, ...response.data.emergencies]);
           } else {
-            setGroceries(response.data.groceries);
+            setEmergencies(response.data.emergencies);
           }
           setPostSize(response.data.postSize);
         } else {
-          alert("Failed to fectch grocery datas");
+          alert("Failed to fectch Emergency datas");
         }
       }
     );
@@ -60,22 +60,24 @@ function GroceryLandingPage() {
       filters: Filters,
       searchTerm: SearchTerms,
     };
-    getGroceries(variables);
+    getEmergencies(variables);
     setSkip(skip);
   };
 
-  const renderCards = Groceries.map((grocery, index) => {
+  const renderCards = Emergencies.map((emergency, index) => {
     return (
       <Col lg={6} md={8} xs={24}>
         <Card
           hoverable={true}
           cover={
-            <a href={`/grocery/${grocery._id}`}>
+            <a href={`/emergency/${emergency._id}`}>
               {" "}
-              <ImageSlider images={grocery.images} />
+              <ImageSlider images={emergency.images} />
             </a>
           }>
-          <Meta title={grocery.title} description={`BDT: ${grocery.price}Tk`} />
+          <Meta title={`Service: ${emergency.title}`} />
+          <br />
+          <Meta title={`Contact Number: ${emergency.phoneNumber}`} />
         </Card>
       </Col>
     );
@@ -131,17 +133,19 @@ function GroceryLandingPage() {
     setSkip(0);
     setSearchTerms(newSearchTerm);
 
-    getGroceries(variables);
+    getEmergencies(variables);
   };
 
   return (
     <div>
-      <div className='hero-wrapper17'>
-        <div className='wrapper2'>
-          <div className='hero-content2'>
+      <div className='hero-wrapper12'>
+        <div className='wrapper4'>
+          <div className='hero-content4'>
             <div>
-              <button className='button1'>
-                <a href='/grocery/Upload'>Add Grocery Product?</a>
+              <button className='button4'>
+                <a href='/emergency/Upload'>
+                  Add Emergency Service information
+                </a>
               </button>
             </div>
           </div>
@@ -152,10 +156,9 @@ function GroceryLandingPage() {
         <div style={{ textAlign: "center" }}>
           <h2>
             {" "}
-            Grocery list <Icon type='rocket' />{" "}
+            Emergency Service list <Icon type='rocket' />{" "}
           </h2>
         </div>
-
         {/* Filter  */}
 
         {/* <Row gutter={[16, 16]}>
@@ -177,7 +180,7 @@ function GroceryLandingPage() {
           <SearchFeature refreshFunction={updateSearchTerms} />
         </div>
 
-        {Groceries.length === 0 ? (
+        {Emergencies.length === 0 ? (
           <div
             style={{
               display: "flex",
@@ -205,4 +208,4 @@ function GroceryLandingPage() {
   );
 }
 
-export default GroceryLandingPage;
+export default EmergencyLandingPage;

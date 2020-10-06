@@ -42,6 +42,8 @@ app.use("/api/grocery", require("./routes/grocery"));
 app.use("/api/volunteer", require("./routes/volunteer"));
 app.use("/api/police", require("./routes/police"));
 app.use("/api/hotel", require("./routes/hotel"));
+app.use("/api/pharmacy", require("./routes/pharmacy"));
+app.use("/api/emergency", require("./routes/emergency"));
 
 //use this to show the image you have in node js server to client (react js)
 //https://stackoverflow.com/questions/48914987/send-image-path-from-node-js-express-server-to-react-client
@@ -51,6 +53,8 @@ app.use("/groceryuploads", express.static("groceryuploads"));
 app.use("/volunteeruploads", express.static("volunteeruploads"));
 app.use("/policeuploads", express.static("policeuploads"));
 app.use("/hoteluploads", express.static("hoteluploads"));
+app.use("/pharmacyuploads", express.static("pharmacyuploads"));
+app.use("/emergencyuploads", express.static("emergencyuploads"));
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {

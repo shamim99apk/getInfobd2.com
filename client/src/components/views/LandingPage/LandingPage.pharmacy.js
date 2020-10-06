@@ -3,8 +3,8 @@ import Axios from "axios";
 import { Col, Card, Row } from "antd";
 import ImageSlider from "../../utils/ImageSlider";
 // import CheckBox from "./Sections/CheckBox";
-import "./LandingPage.grocery.scss";
-import "./LandingPage.grocerytwo.scss";
+import "./LandingPage.police.scss";
+import "./LandingPage.pharmacy.scss";
 
 import Icon from "@ant-design/icons";
 // import { continents } from "./Sections/Datas.blood";
@@ -12,8 +12,8 @@ import SearchFeature from "./Sections/SearchFeature";
 
 const { Meta } = Card;
 
-function GroceryLandingPage() {
-  const [Groceries, setGroceries] = useState([]);
+function PharmacyLandingPage() {
+  const [Pharmacies, setPharmacies] = useState([]);
   const [Skip, setSkip] = useState(0);
 
   const [Limit, setLimit] = useState(8);
@@ -30,21 +30,21 @@ function GroceryLandingPage() {
       limit: Limit,
     };
 
-    getGroceries(variables);
+    getPharmacies(variables);
   }, []);
 
-  const getGroceries = (variables) => {
-    Axios.post("/api/grocery/groceryGetProducts", variables).then(
+  const getPharmacies = (variables) => {
+    Axios.post("/api/pharmacy/pharmacyGetProducts", variables).then(
       (response) => {
         if (response.data.success) {
           if (variables.loadMore) {
-            setGroceries([...Groceries, ...response.data.groceries]);
+            setPharmacies([...Pharmacies, ...response.data.pharmacies]);
           } else {
-            setGroceries(response.data.groceries);
+            setPharmacies(response.data.pharmacies);
           }
           setPostSize(response.data.postSize);
         } else {
-          alert("Failed to fectch grocery datas");
+          alert("Failed to fectch Pharmacies datas");
         }
       }
     );
@@ -60,22 +60,22 @@ function GroceryLandingPage() {
       filters: Filters,
       searchTerm: SearchTerms,
     };
-    getGroceries(variables);
+    getPharmacies(variables);
     setSkip(skip);
   };
 
-  const renderCards = Groceries.map((grocery, index) => {
+  const renderCards = Pharmacies.map((pharmacy, index) => {
     return (
       <Col lg={6} md={8} xs={24}>
         <Card
           hoverable={true}
           cover={
-            <a href={`/grocery/${grocery._id}`}>
+            <a href={`/pharmacy/${pharmacy._id}`}>
               {" "}
-              <ImageSlider images={grocery.images} />
+              <ImageSlider images={pharmacy.images} />
             </a>
           }>
-          <Meta title={grocery.title} description={`BDT: ${grocery.price}Tk`} />
+          <Meta title={pharmacy.title} />
         </Card>
       </Col>
     );
@@ -131,17 +131,17 @@ function GroceryLandingPage() {
     setSkip(0);
     setSearchTerms(newSearchTerm);
 
-    getGroceries(variables);
+    getPharmacies(variables);
   };
 
   return (
     <div>
-      <div className='hero-wrapper17'>
-        <div className='wrapper2'>
-          <div className='hero-content2'>
+      <div className='hero-wrapper11'>
+        <div className='wrapper4'>
+          <div className='hero-content4'>
             <div>
-              <button className='button1'>
-                <a href='/grocery/Upload'>Add Grocery Product?</a>
+              <button className='button4'>
+                <a href='/pharmacy/Upload'>Add Pharmacy information</a>
               </button>
             </div>
           </div>
@@ -152,10 +152,9 @@ function GroceryLandingPage() {
         <div style={{ textAlign: "center" }}>
           <h2>
             {" "}
-            Grocery list <Icon type='rocket' />{" "}
+            pharmacy list <Icon type='rocket' />{" "}
           </h2>
         </div>
-
         {/* Filter  */}
 
         {/* <Row gutter={[16, 16]}>
@@ -177,7 +176,7 @@ function GroceryLandingPage() {
           <SearchFeature refreshFunction={updateSearchTerms} />
         </div>
 
-        {Groceries.length === 0 ? (
+        {Pharmacies.length === 0 ? (
           <div
             style={{
               display: "flex",
@@ -205,4 +204,4 @@ function GroceryLandingPage() {
   );
 }
 
-export default GroceryLandingPage;
+export default PharmacyLandingPage;

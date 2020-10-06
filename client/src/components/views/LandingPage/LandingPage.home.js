@@ -9,7 +9,7 @@ function HomeLandingPage() {
         <div className='wrapper1'>
           <div className='hero-content1'>
             <h1>A Place Where You Get All Info </h1>
-            <p className='subtitle1'>help others and create beautiful world</p>
+            <p className='subtitle1'>Help others and create beautiful world</p>
           </div>
         </div>
       </div>
@@ -17,12 +17,12 @@ function HomeLandingPage() {
       <div className='body'>
         <div className='container'>
           <div className='box'>
-            <a href='/grocery'>
+            <a href='/blood'>
               <h2>Blood</h2>
             </a>
           </div>
           <div className='box'>
-            <a href='/blood'>
+            <a href='/grocery'>
               <h2>Grocery</h2>
             </a>
           </div>
@@ -40,6 +40,18 @@ function HomeLandingPage() {
             <a href='/police'>
               {" "}
               <h2>Police</h2>
+            </a>
+          </div>
+          <div className='box'>
+            <a href='/pharmacy'>
+              {" "}
+              <h2>Pharmacy</h2>
+            </a>
+          </div>
+          <div className='box'>
+            <a href='/emergency'>
+              {" "}
+              <h2>Emergency</h2>
             </a>
           </div>
         </div>

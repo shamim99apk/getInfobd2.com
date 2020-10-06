@@ -137,7 +137,7 @@ function PoliceLandingPage() {
           <div className='hero-content4'>
             <div>
               <button className='button4'>
-                <a href='/police/Upload'>Set Police information</a>
+                <a href='/police/Upload'>Set Police Station information</a>
               </button>
             </div>
           </div>

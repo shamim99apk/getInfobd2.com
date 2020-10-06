@@ -4,6 +4,8 @@ import { Col, Card, Row } from "antd";
 import ImageSlider from "../../utils/ImageSlider";
 // import CheckBox from "./Sections/CheckBox";
 import "./LandingPage.hotel.scss";
+import "./LandingPage.hoteltwo.scss";
+
 import Icon from "@ant-design/icons";
 // import { continents } from "./Sections/Datas.blood";
 import SearchFeature from "./Sections/SearchFeature";
@@ -132,12 +134,12 @@ function HotelLandingPage() {
 
   return (
     <div>
-      <div className='hero-wrapper3'>
+      <div className='hero-wrapper16'>
         <div className='wrapper3'>
           <div className='hero-content3'>
             <div>
               <button className='button3'>
-                <a href='/hotel/Upload'>Hotel info</a>
+                <a href='/hotel/Upload'>Add Hotel</a>
               </button>
             </div>
           </div>
@@ -150,11 +152,6 @@ function HotelLandingPage() {
             {" "}
             Hotel list <Icon type='rocket' />{" "}
           </h2>
-          <div>
-            <button>
-              <a href='/hotel/hotelUpload'>upload</a>
-            </button>
-          </div>
         </div>
 
         {/* Filter  */}
