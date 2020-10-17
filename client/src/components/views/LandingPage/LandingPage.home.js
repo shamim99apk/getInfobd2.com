@@ -8,8 +8,8 @@ function HomeLandingPage() {
       <div className='hero-wrapper1'>
         <div className='wrapper1'>
           <div className='hero-content1'>
-            <h1>A Place Where You Get All Info </h1>
-            <p className='subtitle1'>Help others and create beautiful world</p>
+            <h1>ONLINE AREA MANAGER </h1>
+            <p className='subtitle1'>A Place Where you get all the info</p>
           </div>
         </div>
       </div>
