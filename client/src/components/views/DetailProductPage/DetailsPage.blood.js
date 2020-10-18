@@ -3,7 +3,7 @@ import Axios from "axios";
 import { Row, Col } from "antd";
 import BloodImages from "./Sections/Image.blood";
 import BloodInfo from "./Sections/Info.blood";
-import BloodGoogleMap from "../../GoogleMap/GoogleMap.blood";
+// import BloodGoogleMap from "../../GoogleMap/GoogleMap.blood";
 
 function BloodDetailsPage(props) {
   const bloodId = props.match.params.bloodId;
@@ -33,7 +33,7 @@ function BloodDetailsPage(props) {
           <BloodInfo detail={Blood} />
         </Col>
       </Row>
-      <BloodGoogleMap />
+      {/* <BloodGoogleMap /> */}
     </div>
   );
 }

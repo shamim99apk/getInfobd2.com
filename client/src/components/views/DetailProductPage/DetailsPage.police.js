@@ -3,7 +3,7 @@ import Axios from "axios";
 import { Row, Col } from "antd";
 import PoliceImages from "./Sections/Image.police";
 import PoliceInfo from "./Sections/Info.police";
-import PoliceGoogleMap from "../../GoogleMap/GoogleMap.police";
+// import PoliceGoogleMap from "../../GoogleMap/GoogleMap.police";
 
 function PoliceDetailsPage(props) {
   const policeId = props.match.params.policeId;
@@ -34,7 +34,7 @@ function PoliceDetailsPage(props) {
         </Col>
       </Row>
 
-      <PoliceGoogleMap />
+      {/* <PoliceGoogleMap /> */}
     </div>
   );
 }

@@ -3,7 +3,7 @@ import Axios from "axios";
 import { Row, Col } from "antd";
 import VolunteerImages from "./Sections/Image.volunteer";
 import VolunteerInfo from "./Sections/Info.volunteer";
-import VolunteerGoogleMap from "../../GoogleMap/GoogleMap.volunteer";
+// import VolunteerGoogleMap from "../../GoogleMap/GoogleMap.volunteer";
 
 function VolunteerDetailsPage(props) {
   const volunteerId = props.match.params.volunteerId;
@@ -33,7 +33,7 @@ function VolunteerDetailsPage(props) {
           <VolunteerInfo detail={Volunteer} />
         </Col>
       </Row>
-      <VolunteerGoogleMap />
+      {/* <VolunteerGoogleMap /> */}
     </div>
   );
 }

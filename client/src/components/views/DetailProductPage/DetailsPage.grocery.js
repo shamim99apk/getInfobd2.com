@@ -3,7 +3,7 @@ import Axios from "axios";
 import { Row, Col } from "antd";
 import GroceryImages from "./Sections/Image.grocery";
 import GroceryInfo from "./Sections/Info.grocery";
-import GroceryGoogleMap from "../../GoogleMap/GoogleMap.grocery";
+// import GroceryGoogleMap from "../../GoogleMap/GoogleMap.grocery";
 
 function GroceryDetailsPage(props) {
   const groceryId = props.match.params.groceryId;
@@ -34,7 +34,7 @@ function GroceryDetailsPage(props) {
         </Col>
       </Row>
 
-      <GroceryGoogleMap />
+      {/* <GroceryGoogleMap /> */}
     </div>
   );
 }

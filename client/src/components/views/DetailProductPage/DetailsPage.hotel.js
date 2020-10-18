@@ -3,7 +3,7 @@ import Axios from "axios";
 import { Row, Col } from "antd";
 import HotelImages from "./Sections/Image.hotel";
 import HotelInfo from "./Sections/Info.hotel";
-import HotelGoogleMap from "../../GoogleMap/GoogleMap.hotel";
+// import HotelGoogleMap from "../../GoogleMap/GoogleMap.hotel";
 
 function HotelDetailsPage(props) {
   const hotelId = props.match.params.hotelId;
@@ -33,7 +33,7 @@ function HotelDetailsPage(props) {
           <HotelInfo detail={Hotel} />
         </Col>
       </Row>
-      <HotelGoogleMap />
+      {/* <HotelGoogleMap /> */}
     </div>
   );
 }

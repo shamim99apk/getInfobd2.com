@@ -3,7 +3,7 @@ import Axios from "axios";
 import { Row, Col } from "antd";
 import PharmacyImages from "./Sections/Image.pharmacy";
 import PharmacyInfo from "./Sections/Info.pharmacy";
-import HotelGoogleMap from "../../GoogleMap/GoogleMap.hotel";
+// import HotelGoogleMap from "../../GoogleMap/GoogleMap.hotel";
 
 function PharmacyDetailsPage(props) {
   const pharmacyId = props.match.params.pharmacyId;
@@ -33,7 +33,7 @@ function PharmacyDetailsPage(props) {
           <PharmacyInfo detail={Pharmacy} />
         </Col>
       </Row>
-      <HotelGoogleMap />
+      {/* <HotelGoogleMap /> */}
     </div>
   );
 }
